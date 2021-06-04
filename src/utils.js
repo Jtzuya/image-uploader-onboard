@@ -66,7 +66,8 @@ import toLower from 'lodash/toLower';
 }
 
 /**
- * Display tag names of all previousElementSiblings with class = 'element'. 1. Must use document.getElementsByClassName("element") to get all elements
+ * Display tag classNames in an array divs with class = 'element'. 
+ * 1. Must use document.getElementsByClassName("element") to get all elements
  * @returns 
  */
 export const displayTagNames = () => {
@@ -74,7 +75,7 @@ export const displayTagNames = () => {
   const tagDivs = document.getElementsByClassName('element')
   // console.log('html collection of tagDivs', tagDivs)
 
-  let selectTag = null
+  let selectTags = []
 
   forEach(tagDivs, tag => {
     let previousSibling = tag.previousElementSibling
