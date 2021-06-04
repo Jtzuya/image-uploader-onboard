@@ -1,4 +1,5 @@
 import forEach from 'lodash/forEach'
+import toLower from 'lodash/toLower';
 
 /**
  * Display INNERHTML inside a div with class that contains 'second-element'. 
@@ -71,22 +72,30 @@ import forEach from 'lodash/forEach'
 export const displayTagNames = () => {
   // must use code logic, no hard coding
   const tagDivs = document.getElementsByClassName('element')
-  console.log('html collection of tagDivs', tagDivs)
+  // console.log('html collection of tagDivs', tagDivs)
 
   let selectTag = null
 
   forEach(tagDivs, tag => {
-    const previousSibling = tag.previousElementSibling
-    console.log('previous sibling type', previousSibling)
-    // // console.log('previous sibling innerHTML', previousSibling.innerHTML)
-    // // if(tag.className.includes)
-    if(tag.className.includes('element')){
-
+    let previousSibling = tag.previousElementSibling
+    // console.log("this!!!!",previousSibling)
+    
+    if(tag.className.includes('element').previousSibling){
+      selectTag = tag
     }
-    // console.log('tag!!!!!!!!!!!!!', tag.className)
+    // console.log("taggerrrrr", tag)
   })
 
-  // console.log('select tag', selectTag)
+  const answer3 = document.getElementsByClassName('row-3-answer')
+  // console.log('the answer 3 = ', answer3)
+  const answer3Div = answer3[0]
+  console.log('the answer 3 div', answer3Div)
+
+
+  // answer3Div.innerHTML =
+  
+
+  // console.log('select tag !!!!!', selectTag)
 
   return ""
 }
