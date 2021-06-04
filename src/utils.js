@@ -80,10 +80,10 @@ export const displayTagNames = () => {
     let previousSibling = tag.previousElementSibling
     // console.log("this!!!!",previousSibling)
     
-    if(tag.className.includes('element').previousSibling){
+    if(tag.className.includes('element')){
       selectTag = tag
     }
-    // console.log("taggerrrrr", tag)
+    console.log("taggerrrrr", tag)
   })
 
   const answer3 = document.getElementsByClassName('row-3-answer')
