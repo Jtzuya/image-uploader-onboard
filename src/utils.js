@@ -1,3 +1,5 @@
+import forEach from 'lodash/forEach'
+
 /**
  * Display INNERHTML inside a div with class that contains 'second-element'. 
  * 1. Must start with document.getElementsByClassName("element") to get all elements
@@ -5,20 +7,26 @@
  */
  export const rowOneText = () => {
   // must use code logic, no hard code
-  const firstRow = document.getElementsByClassName('row-1')
+  const elementDivs = document.getElementsByClassName('element')
 
-  console.log('first row collection', firstRow)
+  // console.log('first row collection', elementDivs)
 
   let selectRow = null
 
-  // forEach(firstRow, row => {
-  //   let secondEl = row.childNodes;
-  //   console.log('second element', secondEl)
-  // })
-  let childDiv = firstRow[0].childNodes[1];
-  childDiv.setAttribute('class', 'second-element')
-  childDiv.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed maiores earum sunt amet quas incidunt nobis blanditiis sequi nihil molestias fugiat architecto exercitationem soluta necessitatibus beatae, itaque odit ut officiis!"
-  childDiv.style.marginTop = '30px'
+  forEach(elementDivs, element => {
+    if(element.className.includes('second')){
+      selectRow = element
+    }
+    console.log(element.className)
+  })
+
+  const answer1 = document.getElementsByClassName('row-1-answer');
+  // // console.log('a',answer)
+  let answerDiv = answer1[0]
+  // // console.log('a-div', answerDiv)
+  answerDiv.innerHTML = selectRow.innerHTML
+
+  // console.log('row',selectRow)
 
   return ""
 }
@@ -30,16 +38,29 @@
  * 2. filter through tagName of each element AND filter through className to make sure it has dog in it 
  * @returns 
  */
+
  export const rowTwoText = () => {
   // must use code logic, no hard coding
-  // const secondRow = document.querySelector('.row-2')
-  // let ele = secondRow.setAttribute('class', 'ele-field')
+  const inputElements = document.getElementsByClassName('ele-field')
+  // console.log('HTML COLLECTION FOR INSIDE THIS ELEMENT', inputElements)
 
-  // console.log(ele)
-  // console.log(secondRow)
+  let selectInput = null
 
+  forEach(inputElements, input => {
+    if(input.className.includes('dog')){
+      selectInput = input
+    }
+    // console.log('input', input.className)
+  })
 
+  const answer2 = document.getElementsByClassName('row-2-answer')
+  // console.log('the class of row 2 answer', answer2)
+  let answer2Div = answer2[0]
+  // console.log('a 2 div',answer2Div)
 
+  // console.log('select input log',selectInput)
+
+  answer2Div.innerHTML = selectInput.value
   return ""
 }
 
@@ -49,6 +70,24 @@
  */
 export const displayTagNames = () => {
   // must use code logic, no hard coding
+  const tagDivs = document.getElementsByClassName('element')
+  console.log('html collection of tagDivs', tagDivs)
+
+  let selectTag = null
+
+  forEach(tagDivs, tag => {
+    const previousSibling = tag.previousElementSibling
+    console.log('previous sibling type', previousSibling)
+    // // console.log('previous sibling innerHTML', previousSibling.innerHTML)
+    // // if(tag.className.includes)
+    if(tag.className.includes('element')){
+
+    }
+    // console.log('tag!!!!!!!!!!!!!', tag.className)
+  })
+
+  // console.log('select tag', selectTag)
+
   return ""
 }
 
