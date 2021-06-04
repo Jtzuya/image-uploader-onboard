@@ -82,15 +82,15 @@ export const displayTagNames = () => {
     // console.log("this!!!!",previousSibling)
     
     if(tag.className.includes('element')){
-      selectTags = tag
+      selectTags.push(tag.className)
     }
     console.log("taggerrrrr", tag)
   })
 
-  // const answer3 = document.getElementsByClassName('row-3-answer')
-  // // console.log('the answer 3 = ', answer3)
-  // const answer3Div = answer3[0]
-  // console.log('the answer 3 div', answer3Div)
+  const answer3 = document.getElementsByClassName('row-3-answer')
+  // console.log('the answer 3 = ', answer3)
+  const answer3Div = answer3[0]
+  console.log('the answer 3 div', answer3Div)
 
 
   // answer3Div.innerHTML =
