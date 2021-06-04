@@ -51,7 +51,7 @@ import toLower from 'lodash/toLower';
     if(input.className.includes('dog')){
       selectInput = input
     }
-    // console.log('input', input.className)
+    console.log('input', input.className)
   })
 
   const answer2 = document.getElementsByClassName('row-2-answer')
@@ -87,16 +87,20 @@ export const displayTagNames = () => {
     console.log("taggerrrrr", tag)
   })
 
-  const answer3 = document.getElementsByClassName('row-3-answer')
-  // console.log('the answer 3 = ', answer3)
-  const answer3Div = answer3[0]
-  console.log('the answer 3 div', answer3Div)
+  let innerHTMLString = ""
+  forEach(selectTags, i => {
+    const answer3 = document.getElementsByClassName('row-3-answer')[0]
+    console.log(answer3)
 
+    let list = document.createElement('ol')
+    answer3.appendChild(list)
+    list.innerHTML = i
 
-  // answer3Div.innerHTML =
-  
+    console.log("all classes", i)
+  })
 
-  console.log('select tag !!!!!', selectTags)
+  // const names = ['Anthony','Stacey','Mason','Gracie','Koda','Nani'];
+  // console.log('select tag !!!!!', selectTags)
 
   return ""
 }
