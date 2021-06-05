@@ -148,79 +148,89 @@ export const makeRowsLightGray = () => {
   let parentEl = document.getElementById('rows')
   // console.log(parentEl)
 
+  // YONGYI EDIT
+  parentEl.addEventListener('change', (event) => {
+    const selectedValue = event.target.value 
+    console.log('selected value is ', selectedValue)
 
-  let list1 = document.getElementsByClassName('row-1')[0]
-  // list1.style.backgroundColor = 'lightgray'
-  // console.log('test', list1)
-  let list2 = document.getElementsByClassName('row-2')[0]
-  // console.log(list2)
-  let list3 = document.getElementsByClassName('row-3')[0]
-  let list4 = document.getElementsByClassName('row-4')[0]
-  let list5 = document.getElementsByClassName('row-5')[0]
+    // get element with the selectedValue class in it
+    const rowDivs = document.getElementsByClassName(selectedValue)
+    const selectedRow = rowDivs[0]
+    selectedRow.style.backgroundColor = 'lightgray'
+  })
 
-  // let answerDiv = []
-  // const allDivs = document.getElementsByTagName('div')
-  // console.log(allDivs)
+  // let list1 = document.getElementsByClassName('row-1')[0]
+  // // list1.style.backgroundColor = 'lightgray'
+  // console.log('test', list1.className)
+  // let list2 = document.getElementsByClassName('row-2')[0]
+  // // console.log(list2)
+  // let list3 = document.getElementsByClassName('row-3')[0]
+  // let list4 = document.getElementsByClassName('row-4')[0]
+  // let list5 = document.getElementsByClassName('row-5')[0]
 
-  // forEach(allDivs, div => {
-  //   // if(div.className.includes('row') && ){
-  //   //   answerDiv = div
-  //   // }
-  //   console.log('attributes', div.attributes )
-  //   // console.log(toLower(div.className).includes('row'))
+  // // let answerDiv = []
+  // // const allDivs = document.getElementsByTagName('div')
+  // // console.log(allDivs)
+
+  // // forEach(allDivs, div => {
+  // //   // if(div.className.includes('row') && ){
+  // //   //   answerDiv = div
+  // //   // }
+  // //   console.log('attributes', div.attributes )
+  // //   // console.log(toLower(div.className).includes('row'))
+  // // })
+  // // console.log('yeey', answerDiv)
+
+  
+  // parentEl.addEventListener('change', e => {
+  //   let selected = e.target.value
+  //   if(selected === 'row-1') {
+  //     list1.style.backgroundColor = 'lightgray'
+  //   } else if (selected !== 'row-1') {
+  //     list1.style.backgroundColor = null
+  //   } // here
+  //   console.log(selected)
   // })
-  // console.log('yeey', answerDiv)
-
   
-  parentEl.addEventListener('change', e => {
-    let selected = e.target.value
-    if(selected === 'row-1') {
-      list1.style.backgroundColor = 'lightgray'
-    } else if (selected !== 'row-1') {
-      list1.style.backgroundColor = null
-    } // here
-    console.log(selected)
-  })
-  
-  parentEl.addEventListener('change', e => {
-    let selected = e.target.value
-    if(selected === 'row-2') {
-      list2.style.backgroundColor = 'lightgray'
-    } else if (selected !== 'row-2') {
-      list2.style.backgroundColor = null
-    } // here
-    console.log(selected)
-  })
+  // parentEl.addEventListener('change', e => {
+  //   let selected = e.target.value
+  //   if(selected === 'row-2') {
+  //     list2.style.backgroundColor = 'lightgray'
+  //   } else if (selected !== 'row-2') {
+  //     list2.style.backgroundColor = null
+  //   } // here
+  //   console.log(selected)
+  // })
 
-  parentEl.addEventListener('change', e => {
-    let selected = e.target.value
-    if(selected === 'row-3') {
-      list3.style.backgroundColor = 'lightgray'
-    } else if (selected !== 'row-3') {
-      list3.style.backgroundColor = null
-    } // here
-    console.log(selected)
-  })
+  // parentEl.addEventListener('change', e => {
+  //   let selected = e.target.value
+  //   if(selected === 'row-3') {
+  //     list3.style.backgroundColor = 'lightgray'
+  //   } else if (selected !== 'row-3') {
+  //     list3.style.backgroundColor = null
+  //   } // here
+  //   console.log(selected)
+  // })
 
-  parentEl.addEventListener('change', e => {
-    let selected = e.target.value
-    if(selected === 'row-4') {
-      list4.style.backgroundColor = 'lightgray'
-    } else if (selected !== 'row-4') {
-      list4.style.backgroundColor = null
-    } // here
-    console.log(selected)
-  })
+  // parentEl.addEventListener('change', e => {
+  //   let selected = e.target.value
+  //   if(selected === 'row-4') {
+  //     list4.style.backgroundColor = 'lightgray'
+  //   } else if (selected !== 'row-4') {
+  //     list4.style.backgroundColor = null
+  //   } // here
+  //   console.log(selected)
+  // })
 
-  parentEl.addEventListener('change', e => {
-    let selected = e.target.value
-    if(selected === 'row-5') {
-      list5.style.backgroundColor = 'lightgray'
-    } else if (selected !== 'row-5') {
-      list5.style.backgroundColor = null
-    } // here
-    console.log(selected)
-  })
+  // parentEl.addEventListener('change', e => {
+  //   let selected = e.target.value
+  //   if(selected === 'row-5') {
+  //     list5.style.backgroundColor = 'lightgray'
+  //   } else if (selected !== 'row-5') {
+  //     list5.style.backgroundColor = null
+  //   } // here
+  //   console.log(selected)
+  // })
 
   
 }
