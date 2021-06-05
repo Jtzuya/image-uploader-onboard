@@ -1,5 +1,5 @@
 import forEach from 'lodash/forEach'
-import toLower from 'lodash/toLower';
+// import toLower from 'lodash/toLower';
 
 /**
  * Display INNERHTML inside a div with class that contains 'second-element'. 
@@ -18,7 +18,7 @@ import toLower from 'lodash/toLower';
     if(element.className.includes('second')){
       selectRow = element
     }
-    console.log(element.className)
+    // console.log(element.className)
   })
 
   const answer1 = document.getElementsByClassName('row-1-answer');
@@ -51,7 +51,7 @@ import toLower from 'lodash/toLower';
     if(input.className.includes('dog')){
       selectInput = input
     }
-    console.log('input', input.className)
+    // console.log('input', input.className)
   })
 
   const answer2 = document.getElementsByClassName('row-2-answer')
@@ -78,28 +78,27 @@ export const displayTagNames = () => {
   let selectTags = []
 
   forEach(tagDivs, tag => {
-    let previousSibling = tag.previousElementSibling
+    // let previousSibling = tag.previousElementSibling
     // console.log("this!!!!",previousSibling)
     
     if(tag.className.includes('element')){
       selectTags.push(tag.className)
     }
-    console.log("taggerrrrr", tag)
+    // console.log("taggerrrrr", tag)
   })
 
   let innerHTMLString = ""
   forEach(selectTags, i => {
     const answer3 = document.getElementsByClassName('row-3-answer')[0]
-    console.log(answer3)
+    // console.log(answer3)
 
-    let list = document.createElement('ol')
+    let list = document.createElement('div')
     answer3.appendChild(list)
     list.innerHTML = i
 
-    console.log("all classes", i)
+    // console.log("all classes", i)
   })
 
-  // const names = ['Anthony','Stacey','Mason','Gracie','Koda','Nani'];
   // console.log('select tag !!!!!', selectTags)
 
   return ""
@@ -112,9 +111,30 @@ export const displayTagNames = () => {
  * 
  */
 export const displayConsolelog = () => {
+  const elementDivs = document.getElementsByClassName('ele-field')
+  // console.log('HTML Collection', elementDivs)
   let matchedPreviousSiblings = []
+  
+  forEach(elementDivs, element => {
+    if(element.className.includes('ele')){
+      matchedPreviousSiblings.push(element.className)
+    }
+    // console.log('class names', element.className)
+  })
+
+  // console.log(matchedPreviousSiblings)
+  forEach(matchedPreviousSiblings, matched => {
+    const answer4 = document.getElementsByClassName('row-4-answer')[0]
+    // console.log(answer4)
+    let newDiv = document.createElement('div')
+    answer4.appendChild(newDiv)
+    newDiv.textContent = matched
+    // console.log(newDiv)
+  })
+  
+  // console.log(matchedPreviousSiblings.length)
   // you can use matchedPreviousSiblings.push() -> google array.push
-  console.log("matched previous siblings with 'field' regardless of capital letters or not")
+  // console.log("matched previous siblings with 'field' regardless of capital letters or not")
 }
 
 /**
@@ -125,5 +145,14 @@ export const displayConsolelog = () => {
  *            -> google HTML dom style if you need to
  */
 export const makeRowsLightGray = () => {
-
+  let parentEl = document.getElementById('rows')
+  // console.log(parentEl)
+  parentEl.addEventListener('change', e => {
+    let selected = e.target
+    selected.style.backgroundColor = 'lightgray'
+    
+    console.log(e.type, e.target.value)
+    console.log(e.target.value)
+    // e.stopPropagation();
+  })
 }
